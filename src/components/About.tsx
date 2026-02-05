@@ -4,7 +4,7 @@ export default function About() {
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple/30 to-transparent" />
 
-      <div className="w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-20 py-32 lg:py-44">
+      <div className="w-full max-w-[1200px] mx-auto px-3 py-20 sm:py-32 lg:py-44">
         <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left side - Text */}
           <div>
@@ -20,13 +20,8 @@ export default function About() {
             </h2>
             <div className="mt-8 space-y-5">
               <p className="text-white/60 text-lg leading-relaxed">
-                Smoke &amp; Terp is more than just a delivery service. We&apos;re a
-                curated experience. Every product in our lineup is hand-selected,
-                lab-tested, and approved by real smokers who know the difference.
-              </p>
-              <p className="text-white/60 text-lg leading-relaxed">
-                We move different because we care different. No mid. No cap.
-                Just top-shelf quality delivered straight to you, every single time.
+                We deliver quality local cannabis flower and products to the
+                Bakersfield area from 11am to 7pm Monday thru Saturday.
               </p>
             </div>
 

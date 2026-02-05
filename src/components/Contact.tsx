@@ -7,7 +7,7 @@ export default function Contact() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple/30 to-transparent" />
 
       {/* Extra top spacer for breathing room from delivery section */}
-      <div className="w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-20 pt-40 lg:pt-52 pb-32 lg:pb-44">
+      <div className="w-full max-w-[1200px] mx-auto px-3 pt-20 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32">
         <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
           {/* Left side */}
           <div>
@@ -65,7 +65,7 @@ export default function Contact() {
                   <div className="text-xs uppercase tracking-widest text-white/40 mb-1">
                     Hours
                   </div>
-                  <span className="text-white font-bold text-lg">Open Daily — We Don&apos;t Sleep</span>
+                  <span className="text-white font-bold text-lg">11am – 7pm, Monday thru Saturday</span>
                 </div>
               </div>
             </div>
@@ -91,51 +91,51 @@ export default function Contact() {
 
           {/* Right side - Quick order form */}
           <div>
-            <div className="glass rounded-lg p-10 sm:p-12">
-              <h3 className="text-2xl font-black uppercase text-white mb-3">
+            <div className="glass rounded-lg p-8">
+              <h3 className="text-xl font-black uppercase text-white mb-2">
                 Quick Order
               </h3>
-              <p className="text-white/40 text-sm mb-10">
+              <p className="text-white/40 text-sm mb-6">
                 Drop your info and we&apos;ll get back to you ASAP.
               </p>
 
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div>
-                  <label className="text-xs uppercase tracking-widest text-white/40 mb-3 block">
+                  <label className="text-xs uppercase tracking-widest text-white/40 mb-2 block">
                     Name
                   </label>
                   <input
                     type="text"
-                    className="w-full px-5 py-4 bg-dark-card border border-dark-border rounded-lg text-white placeholder-white/20 focus:outline-none focus:border-neon/50 transition-colors"
+                    className="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg text-white placeholder-white/20 focus:outline-none focus:border-neon/50 transition-colors text-sm"
                     placeholder="Your name"
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs uppercase tracking-widest text-white/40 mb-3 block">
+                  <label className="text-xs uppercase tracking-widest text-white/40 mb-2 block">
                     Phone / Contact
                   </label>
                   <input
                     type="text"
-                    className="w-full px-5 py-4 bg-dark-card border border-dark-border rounded-lg text-white placeholder-white/20 focus:outline-none focus:border-neon/50 transition-colors"
+                    className="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg text-white placeholder-white/20 focus:outline-none focus:border-neon/50 transition-colors text-sm"
                     placeholder="How to reach you"
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs uppercase tracking-widest text-white/40 mb-3 block">
+                  <label className="text-xs uppercase tracking-widest text-white/40 mb-2 block">
                     What You Need
                   </label>
                   <textarea
-                    rows={5}
-                    className="w-full px-5 py-4 bg-dark-card border border-dark-border rounded-lg text-white placeholder-white/20 focus:outline-none focus:border-neon/50 transition-colors resize-none"
+                    rows={3}
+                    className="w-full px-4 py-3 bg-dark-card border border-dark-border rounded-lg text-white placeholder-white/20 focus:outline-none focus:border-neon/50 transition-colors resize-none text-sm"
                     placeholder="Tell us what you're looking for..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-neon text-black font-black uppercase tracking-wider rounded-lg hover:bg-neon-dim transition-all hover:scale-[1.02] mt-2"
+                  className="w-full py-3 bg-neon text-black font-black uppercase tracking-wider rounded-lg hover:bg-neon-dim transition-all"
                 >
                   Send Order Request
                 </button>

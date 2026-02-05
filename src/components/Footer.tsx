@@ -1,15 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="border-t border-dark-border">
-      <div className="w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-20 py-20 lg:py-24">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-14 lg:gap-20 mb-20">
+      <div className="w-full max-w-[1200px] mx-auto px-3 py-10 sm:py-12 lg:py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 mb-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-neon to-purple flex items-center justify-center font-black text-black text-xl">
-                S
+              <div className="relative w-10 h-10">
+                <Image
+                  src="/images/logo.png"
+                  alt="Smoke & Terp"
+                  fill
+                  className="object-contain"
+                  sizes="40px"
+                />
               </div>
               <div>
                 <span className="text-xl font-black tracking-wider uppercase text-white">
@@ -38,12 +45,12 @@ export default function Footer() {
               <Link href="/menu" className="block text-white/40 hover:text-neon text-sm transition-colors">
                 Menu
               </Link>
-              <a href="#about" className="block text-white/40 hover:text-neon text-sm transition-colors">
+              <Link href="/#about" className="block text-white/40 hover:text-neon text-sm transition-colors">
                 About
-              </a>
-              <a href="#delivery" className="block text-white/40 hover:text-neon text-sm transition-colors">
+              </Link>
+              <Link href="/#delivery" className="block text-white/40 hover:text-neon text-sm transition-colors">
                 Delivery
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -53,17 +60,20 @@ export default function Footer() {
               Products
             </h4>
             <div className="space-y-4">
-              <Link href="/menu" className="block text-white/40 hover:text-neon text-sm transition-colors">
+              <Link href="/menu?category=flower" className="block text-white/40 hover:text-neon text-sm transition-colors">
                 Flower
               </Link>
-              <Link href="/menu" className="block text-white/40 hover:text-neon text-sm transition-colors">
-                Edibles
+              <Link href="/menu?category=concentrates" className="block text-white/40 hover:text-neon text-sm transition-colors">
+                Concentrates
               </Link>
-              <Link href="/menu" className="block text-white/40 hover:text-neon text-sm transition-colors">
+              <Link href="/menu?category=vapes" className="block text-white/40 hover:text-neon text-sm transition-colors">
                 Vapes
               </Link>
-              <Link href="/menu" className="block text-white/40 hover:text-neon text-sm transition-colors">
-                Pre-Rolls
+              <Link href="/menu?category=edibles" className="block text-white/40 hover:text-neon text-sm transition-colors">
+                Edibles
+              </Link>
+              <Link href="/menu?category=prerolls" className="block text-white/40 hover:text-neon text-sm transition-colors">
+                Prerolls
               </Link>
             </div>
           </div>
@@ -88,7 +98,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-10 border-t border-dark-border flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="pt-8 border-t border-dark-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">
             &copy; {new Date().getFullYear()} Smoke &amp; Terp. All rights reserved.
           </p>

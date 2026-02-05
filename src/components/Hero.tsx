@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-24">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-dark to-black" />
 
@@ -34,7 +35,19 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-20 text-center">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-3 flex flex-col items-center justify-center text-center">
+        {/* Logo as hero */}
+        <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] mx-auto mb-8 animate-fade-up">
+          <Image
+            src="/images/logo.png"
+            alt="Smoke & Terp"
+            fill
+            className="object-contain drop-shadow-[0_0_40px_rgba(57,255,20,0.3)]"
+            sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, (max-width: 1024px) 384px, 448px"
+            priority
+          />
+        </div>
+
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon/30 bg-neon/5 mb-8 animate-fade-up">
           <span className="w-2 h-2 rounded-full bg-neon animate-pulse" />
@@ -43,22 +56,12 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Main heading */}
-        <h1
-          className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.85] mb-8 animate-slide-left"
-          style={{ animationDelay: "0.2s" }}
-        >
-          <span className="text-white">SMOKE</span>
-          <br />
-          <span className="gradient-text">&amp;TERP</span>
-        </h1>
-
         {/* Tagline */}
         <p
           className="text-lg sm:text-xl md:text-2xl text-white/60 font-medium max-w-2xl mx-auto mb-12 animate-slide-right"
           style={{ animationDelay: "0.4s" }}
         >
-          Premium flower, edibles, vapes &amp; pre-rolls.
+          Premium flower, concentrates, vapes, edibles &amp; prerolls.
           <br />
           <span className="text-neon font-bold">Delivered to your door.</span>
         </p>
@@ -75,7 +78,7 @@ export default function Hero() {
             Shop Menu
           </Link>
           <a
-            href="#about"
+            href="/#about"
             className="px-10 py-4 border-2 border-white/20 text-white font-bold uppercase text-lg tracking-wider rounded-sm hover:border-neon hover:text-neon transition-all"
           >
             Learn More
@@ -88,15 +91,15 @@ export default function Hero() {
           style={{ animationDelay: "0.8s" }}
         >
           <div>
-            <div className="text-3xl md:text-4xl font-black text-neon">50+</div>
+            <div className="text-3xl md:text-4xl font-black text-neon">28+</div>
             <div className="text-xs uppercase tracking-widest text-white/40 mt-2">
-              Strains
+              Products
             </div>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-black text-purple">24/7</div>
+            <div className="text-3xl md:text-4xl font-black text-purple">11-7</div>
             <div className="text-xs uppercase tracking-widest text-white/40 mt-2">
-              Delivery
+              Mon–Sat
             </div>
           </div>
           <div>

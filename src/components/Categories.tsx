@@ -1,50 +1,57 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const categories = [
   {
     name: "Flower",
-    description: "Top-shelf indoor strains. Indica, Sativa & Hybrid.",
-    icon: "🌿",
+    description: "Top-shelf indoor strains. Indica, Sativa & Hybrid options.",
+    iconPath: "/images/weed.png",
     color: "from-green-500 to-neon",
-    borderColor: "border-green-500/30",
-    items: "30+ strains",
+    items: "11 strains",
+    filter: "flower",
   },
   {
-    name: "Edibles",
-    description: "Gummies, chocolates, drinks & more. Lab-tested doses.",
-    icon: "🍬",
-    color: "from-purple to-pink-500",
-    borderColor: "border-purple/30",
-    items: "15+ products",
+    name: "Concentrates",
+    description: "Crumbles, badders & shatters. Premium extracts.",
+    iconPath: "/images/concentrate.jpg",
+    color: "from-yellow-500 to-orange-500",
+    items: "8 products",
+    filter: "concentrates",
   },
   {
     name: "Vapes",
-    description: "Live resin, distillate & disposable carts.",
-    icon: "💨",
+    description: "Live resin, hash rosin & all-in-one disposables.",
+    iconPath: "/images/vape.jpg",
     color: "from-cyan-400 to-blue-500",
-    borderColor: "border-cyan-400/30",
-    items: "20+ options",
+    items: "5 options",
+    filter: "vapes",
+  },
+  {
+    name: "Edibles",
+    description: "Chocolate bars & gummies. Lab-tested doses.",
+    iconPath: "/images/cube.jpg",
+    color: "from-purple to-pink-500",
+    items: "2 products",
+    filter: "edibles",
   },
   {
     name: "Pre-Rolls",
-    description: "Hand-rolled joints & blunts. Infused options available.",
-    icon: "🔥",
+    description: "House rolls & infused cones. Ready to spark.",
+    iconPath: "/images/weed.png",
     color: "from-orange-400 to-red-500",
-    borderColor: "border-orange-400/30",
-    items: "10+ choices",
+    items: "2 choices",
+    filter: "prerolls",
   },
 ];
 
 export default function Categories() {
   return (
     <section className="relative">
-      {/* Background accent */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon/30 to-transparent" />
 
-      <div className="w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-20 py-32 lg:py-44">
-        {/* Section header */}
+      <div className="w-full max-w-[1200px] mx-auto px-3 py-20 sm:py-32 lg:py-44">
         <div className="text-center mb-20">
           <span className="text-neon text-xs font-bold uppercase tracking-[0.3em]">
             What We Carry
@@ -53,61 +60,44 @@ export default function Categories() {
             Our <span className="gradient-text">Categories</span>
           </h2>
           <p className="text-white/50 mt-6 max-w-2xl mx-auto text-lg">
-            Only the finest, hand-picked products. Every item tested and verified
-            for your peace of mind.
+            Only the finest. Every item lab tested and verified.
           </p>
         </div>
 
-        {/* Category cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {categories.map((cat, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center">
+          {categories.map((cat) => (
             <Link
               key={cat.name}
-              href="/menu"
-              className={`group relative p-10 bg-dark-card rounded-lg border ${cat.borderColor} hover:border-neon/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden`}
-              style={{ animationDelay: `${i * 0.15}s` }}
+              href={`/menu?category=${cat.filter}`}
+              className="group relative p-8 bg-dark-card rounded-xl border border-dark-border hover:border-neon/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden text-center"
             >
-              {/* Gradient hover overlay */}
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${cat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
               />
 
               {/* Icon */}
-              <div className="text-5xl mb-6">{cat.icon}</div>
+              <div className="relative w-20 h-20 mx-auto mb-6">
+                <Image
+                  src={cat.iconPath}
+                  alt={cat.name}
+                  fill
+                  className="object-contain"
+                  sizes="80px"
+                />
+              </div>
 
-              {/* Name */}
-              <h3 className="text-2xl font-black uppercase text-white group-hover:text-neon transition-colors">
+              <h3 className="text-xl font-black uppercase text-white group-hover:text-neon transition-colors">
                 {cat.name}
               </h3>
 
-              {/* Description */}
-              <p className="text-white/50 text-sm mt-3 leading-relaxed">
+              <p className="text-white/50 text-sm mt-2 leading-relaxed">
                 {cat.description}
               </p>
 
-              {/* Item count */}
-              <div className="mt-8 flex items-center gap-2">
-                <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${cat.color}`} />
-                <span className="text-xs font-bold uppercase tracking-widest text-white/40">
+              <div className="mt-4">
+                <span className="text-xs font-bold uppercase tracking-widest text-white/30">
                   {cat.items}
                 </span>
-              </div>
-
-              {/* Arrow */}
-              <div className="absolute bottom-8 right-8 w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-neon group-hover:bg-neon/10 transition-all">
-                <svg
-                  className="w-4 h-4 text-white/30 group-hover:text-neon transition-colors"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
               </div>
             </Link>
           ))}

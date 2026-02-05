@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function DeliveryInfo() {
   const steps = [
     {
@@ -13,7 +15,7 @@ export default function DeliveryInfo() {
     {
       step: "02",
       title: "Order",
-      description: "Hit us up and place your order — easy",
+      description: "Hit us up 11-7 Mon–Sat and place your order",
       icon: (
         <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
@@ -23,7 +25,7 @@ export default function DeliveryInfo() {
     {
       step: "03",
       title: "Sit Back",
-      description: "We pull up fast — usually within the hour",
+      description: "We pull up fast, usually within the hour",
       icon: (
         <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -33,7 +35,7 @@ export default function DeliveryInfo() {
     {
       step: "04",
       title: "Enjoy",
-      description: "Light up, relax, and enjoy the good stuff",
+      description: "Light up and relax",
       icon: (
         <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -47,7 +49,7 @@ export default function DeliveryInfo() {
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon/30 to-transparent" />
 
-      <div className="w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-20 py-32 lg:py-44">
+      <div className="w-full max-w-[1200px] mx-auto px-3 py-20 sm:py-32 lg:py-44">
         {/* Section header */}
         <div className="text-center mb-20">
           <span className="text-neon text-xs font-bold uppercase tracking-[0.3em]">
@@ -57,8 +59,9 @@ export default function DeliveryInfo() {
             From Us <span className="gradient-text">To You</span>
           </h2>
           <p className="text-white/50 mt-6 max-w-2xl mx-auto text-lg">
-            Getting your order is as smooth as the smoke. Four simple steps and
-            you&apos;re set.
+            Call between 11 and 7 or text your order to receive confirmation
+            and an estimated ETA. Minimum order can vary depending on your
+            delivery location.
           </p>
         </div>
 
@@ -95,22 +98,21 @@ export default function DeliveryInfo() {
         </div>
 
         {/* CTA Banner */}
-        <div className="mt-28 relative overflow-hidden rounded-lg">
-          <div className="absolute inset-0 bg-gradient-to-r from-neon/20 via-purple/10 to-neon/20" />
-          <div className="relative glass rounded-lg p-12 sm:p-16 text-center">
-            <h3 className="text-3xl sm:text-4xl font-black uppercase text-white mb-4">
+        <div className="mt-20 mb-8 relative overflow-hidden rounded-lg">
+          <div className="absolute inset-0 bg-gradient-to-r from-neon/10 via-purple/5 to-neon/10" />
+          <div className="relative glass rounded-lg p-8 sm:p-10 text-center">
+            <h3 className="text-2xl sm:text-3xl font-black uppercase text-white mb-3">
               Ready To <span className="text-neon neon-text">Order?</span>
             </h3>
-            <p className="text-white/50 max-w-lg mx-auto mb-8 text-lg">
+            <p className="text-white/50 max-w-md mx-auto mb-6">
               Check the menu, pick your products, and we&apos;ll handle the rest.
-              Fast, reliable, and always fire.
             </p>
-            <a
+            <Link
               href="/menu"
-              className="inline-block px-12 py-4 bg-neon text-black font-black uppercase text-lg tracking-wider rounded-sm hover:bg-neon-dim transition-all hover:scale-105"
+              className="inline-block px-10 py-3 bg-neon text-black font-black uppercase tracking-wider rounded-sm hover:bg-neon-dim transition-all"
             >
               View Full Menu
-            </a>
+            </Link>
           </div>
         </div>
       </div>
